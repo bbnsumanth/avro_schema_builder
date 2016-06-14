@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .aParent div {
+        float: left;
+        clear: none;
+        }
+    </style>
+
+    <script>
+
+        function clearMessageSpace() {
+            document.getElementById("message").value = ""
+        }
+
+        function beautify(){
+            var schema = document.getElementById("schemaResult").value
+            var pretty_schema = JSON.stringify(JSON.parse(schema),null,2)
+            document.getElementById("schemaResult").value = pretty_schema
+        }
+
+        function minify(){
+            var pretty_schema = document.getElementById("schemaResult").value
+            var schema= JSON.stringify(JSON.parse(pretty_schema))
+            document.getElementById("schemaResult").value = schema
+        }
+
+        function sendMessage() {
+            var defaultNull = document.getElementById("defaultsForm").elements["defaults"].value
+            var text_message = document.getElementById("message").value;
+            var json_message = JSON.parse(text_message)
+            var json_message_string = JSON.stringify(json_message)
+
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (xhttp.readyState == 4 && xhttp.status == 200) {
+                  document.getElementById("schemaResult").value = JSON.stringify(JSON.parse(xhttp.responseText))
+                }
+            };
+            xhttp.open("POST", "/schema", true);
+
+            //xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            //xhttp.send("message="  +message+  "&withDefault=" + defaultNull)
+
+            xhttp.setRequestHeader("Content-type", "application/json");
+            var payload = JSON.stringify({"message":json_message_string,"withDefault":defaultNull})
+            xhttp.send(payload)
+
+        }
+
+
+
+    </script>
+
+</head>
+<body>
+<div >
+    <h1 style="background-color:#ffa000;width=100%">
+        Avro Schema Builder
+    </h1>
+</div>
+
+<div>
+    <h3>Select defaults</h3>
+    <div class="aParent">
+        <form id="defaultsForm" >
+            <input type="radio" name="defaults" value="true" checked> With Default<br>
+            <input type="radio" name="defaults" value="false"> Without Default<br>
+        </form>
+    </div>
+</div>
+<div style="background-color:#ffa000;width=100%;padding:20px">
+    <button type="button" onclick="sendMessage()">Generate Avro Schema</button>
+    <button type="button" onclick="clearMessageSpace()">Clear</button>
+    <button type="button" onclick="beautify()">Beautify Avro Schema</button>
+    <button type="button" onclick="minify()">Minify Avro Schema</button>
+</div>
+
+<div class="aParent">
+    <div>
+            <h3>Enter Json Message</h3>
+            <textarea id="message" rows="40" cols="80" style="background-color:#F1F7ED"></textarea>
+            <textarea id="schemaResult" rows="40" cols="80" style="background-color:#F1F7ED"></textarea>
+    </div>
+</div>
+
+</body>
+
+</html>

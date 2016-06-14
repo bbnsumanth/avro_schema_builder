@@ -1,0 +1,46 @@
+{
+  "namespace":"order",
+  "name":"cancel",
+  "key":190057,
+  "fields":{
+    "key":190057,
+    "from_state":null,
+    "to_state":null,
+    "order":{
+      "state":"CANCEL",
+      "id":190057,
+      "external_order_id":null,
+      "delivery_date":null,
+      "sub_amount":"0.0",
+      "total_amount":"798.0",
+      "drop_user_id":121063,
+      "drop_user_address_id":180193,
+      "order_type_id":2,
+      "payment_type_id":null,
+      "created_at":"2016-03-14T22:55:07.000+05:30","updated_at":"2016-06-09T13:22:23.000+05:30","amount_to_be_collected":"798.0",
+      "internal_order_id":"ffec45f7","eta":"0.0","source_id":1,"callback_url":null,"pickup_user_id":69741,"amount_to_be_paid":"798.0",
+      "pickup_user_address_id":113892,"category_id":1,"note":null,"size":0,"expiry_time":0,"pickup_waiting_time":0,"delivery_window":null,
+      "distance_type":"SHORT","weight":"1.0","expected_pickup_time":null,"return_amount":0,"source_user_id":69741,"billable_id":1
+    },
+    "merchant":{
+      "id":1,"merchant_logo":"http://31.media.tumblr.com/avatar_89972adf3aea_128.png",
+      "image_ref_id_1":null,
+      "image_ref_id_2":null,
+      "salt":"$2a$10$XGtMPJYjRv7hmb/0DHPHGe",
+      "auth_key":"dccdab6c443b410c0fcb1f19067000b2",
+      "device_id":"354435051882868",
+      "phone_no_order_2":"",
+      "phone_no_poc":"",
+      "landmark":"Wipro park signal",
+      "avg_cost_for_two":200.0,
+      "avg_food_preparation_time":5.0,
+      "created_at":"2015-02-23T11:55:34.000+05:30",
+      "updated_at":"2016-02-19T10:10:56.000+05:30",
+      "min_price_for_two":400.0,"customer_id":7,"food_expiry_time":0,"type":"INDIVIDUAL","app_version":"1.0.4",
+      "app_version_code":9,"user_id":69741,"user_address_id":113892,"report_email_ids":"aruj@thebhukkad.com",
+      "cash_collection_centre":false,"driver_fleet":"ROAD_RUNNR","deactivated":false,"verified_latitude":"0.0",
+      "verified_longitude":"0.0","credit_tier_id":4,"deactivation_override":false,"deactivation_override_at":null,
+      "expected_app_code":0,"merchant_business_name":null,"merchant_account_detail_id":3,"external_id":"BLR-92697"
+    }
+  }
+}

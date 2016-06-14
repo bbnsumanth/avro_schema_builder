@@ -1,0 +1,63 @@
+{
+  "namespace":"order",
+  "type": "record",
+  "name": "cancel",
+  "fields": [
+    {"name": "from_state", "type": ["null", "****"]},
+    {"name": "key","type": ["null", "int"]},
+    {"name":"order" , "type":
+      {
+        "type":"record",
+        "name":"order",
+        "fields":[
+          {"name": "weight","type": ["null", "string"]},
+          {"name": "delivery_window","type": ["null", "****"]},
+          {"name": "amount_to_be_paid","type": ["null", "string"]},
+          {"name": "payment_type_id","type": ["null", "****"]},
+          {"name": "amount_to_be_collected","type": ["null", "string"]},
+          {"name": "pickup_user_id","type": ["null", "int"]},
+          {"name": "size","type": ["null", "int"]},
+          {"name": "delivery_date","type": ["null", "****"]},
+          {"name": "state","type": ["null", "string"]},{"name": "billable_id","type": ["null", "int"]},
+          {"name": "callback_url","type": ["null", "****"]},{"name": "order_type_id","type": ["null", "int"]},
+          {"name": "external_order_id","type": ["null", "****"]},{"name": "source_user_id","type": ["null", "int"]},
+          {"name": "return_amount","type": ["null", "int"]}, {"name": "sub_amount","type": ["null", "string"]},
+          {"name": "pickup_waiting_time","type": ["null", "int"]},{"name": "id","type": ["null", "int"]},
+          {"name": "drop_user_address_id","type": ["null", "int"]},{"name": "note","type": ["null", "****"]},
+          {"name": "internal_order_id","type": ["null", "string"]},{"name": "eta","type": ["null", "string"]},
+          {"name": "source_id","type": ["null", "int"]},{"name": "category_id","type": ["null", "int"]},
+          {"name": "created_at","type": ["null", "string"]},{"name": "expiry_time","type": ["null", "int"]},
+          {"name": "total_amount","type": ["null", "string"]},{"name": "drop_user_id","type": ["null", "int"]},
+          {"name": "updated_at","type": ["null", "string"]},{"name": "distance_type","type": ["null", "string"]},
+          {"name": "pickup_user_address_id","type": ["null", "int"]},{"name": "expected_pickup_time","type": ["null", "****"]}
+        ]
+      }
+    },
+    {"name":"merchant" , "type":{
+      "type":"record",
+      "name":"merchant",
+      "fields":[
+        {"name": "avg_cost_for_two", "type": ["null", "double"]},
+        {"name": "device_id","type": ["null", "string"]},{"name": "app_version_code","type": ["null", "int"]},
+        {"name": "verified_longitude","type": ["null", "string"]},{"name": "customer_id","type": ["null", "int"]},
+        {"name": "app_version","type": ["null", "string"]},{"name": "credit_tier_id","type": ["null", "int"]},
+        {"name": "deactivation_override_at","type": ["null", "****"]},{"name": "report_email_ids","type": ["null", "string"]},
+        {"name": "merchant_account_detail_id","type": ["null", "int"]},{"name": "deactivation_override","type": ["null", "boolean"]},
+        {"name": "phone_no_poc","type": ["null", "string"]},{"name": "image_ref_id_2","type": ["null", "****"]},
+        {"name": "deactivated","type": ["null", "boolean"]},{"name": "auth_key","type": ["null", "string"]},
+        {"name": "cash_collection_centre","type": ["null", "boolean"]},{"name": "user_id","type": ["null", "int"]},
+        {"name": "food_expiry_time","type": ["null", "int"]},{"name": "min_price_for_two","type": ["null", "double"]},
+        {"name": "id","type": ["null", "int"]},{"name": "image_ref_id_1","type": ["null", "****"]},
+        {"name": "merchant_business_name","type": ["null", "****"]},{"name": "expected_app_code","type": ["null", "int"]},
+        {"name": "verified_latitude","type": ["null", "string"]},{"name": "external_id","type": ["null", "string"]},
+        {"name": "created_at","type": ["null", "string"]},{"name": "phone_no_order_2","type": ["null", "string"]},
+        {"name": "user_address_id","type": ["null", "int"]},{"name": "salt","type": ["null", "string"]},
+        {"name": "type","type": ["null", "string"]},{"name": "merchant_logo","type": ["null", "string"]},
+        {"name": "updated_at","type": ["null", "string"]},{"name": "avg_food_preparation_time","type": ["null", "double"]},
+        {"name": "driver_fleet","type": ["null", "string"]},{"name": "landmark","type": ["null", "string"]}
+      ]
+    }
+    },
+    {"name": "to_state","type": ["null", "****"]}
+  ]
+}
